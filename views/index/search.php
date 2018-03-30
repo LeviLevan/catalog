@@ -25,5 +25,5 @@
 				  <?php endforeach; } else {$error =  'Ничего не найдено...';}?>
 			</table>
 		</div>	
-        <?=$error ? $error : '' ?>
+        <?php if(!empty($error)){echo $error;}?>
 <?php include(ROOT.'/views/footer.php'); ?>

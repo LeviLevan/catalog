@@ -48,7 +48,7 @@ class Admin
     public static function getAdminListAut() 
     {
         $db = Db::getConnection();
-        $result = $db->query("SELECT books.book_id,authors.author_name FROM books 
+        $result = $db->query("SELECT books.book_id,authors.author_name, authors.author_id FROM books 
                               JOIN books_authors ON books.book_id=books_authors.book_id 
                               JOIN authors ON authors.author_id=books_authors.author_id ");        
         $i = 0;
@@ -64,7 +64,7 @@ class Admin
     public static function getAdminListGen() 
     {
         $db = Db::getConnection();
-        $result = $db->query("SELECT books.book_id,genres.genre_name FROM books 
+        $result = $db->query("SELECT books.book_id,genres.genre_name, genres.genre_id FROM books 
                               JOIN books_genres ON books.book_id=books_genres.book_id 
                               JOIN genres ON genres.genre_id=books_genres.genre_id");
         $i = 0;
